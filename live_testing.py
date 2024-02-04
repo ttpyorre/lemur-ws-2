@@ -2,6 +2,7 @@ import torch
 from torchvision import transforms
 import cv2 as cv
 from PIL import Image
+import sys
 
 def predict_from_im(model, transform, image):
     # Convert OpenCV image to PIL Image
@@ -19,11 +20,18 @@ def predict_from_im(model, transform, image):
         print(f"Prediction: {preds}")
         
 if __name__ == '__main__':
+    # Parse argument for model name
+    if len(sys.argv) != 2:
+        raise RuntimeError("Wrong number of arguments. Run the script as follows: python3 live-testing.py [model file name]")
+    
+    model_name = sys.argv[1]
+    
     # Set up GPU
-    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+    device = torch.device("cpu")
+    torch.backends.quantized.engine = 'qnnpack'
 
     # Load model that we trained
-    model = torch.jit.load("mobile_model.ptl", map_location=torch.device('cpu')).to(device)
+    model = torch.jit.load(f"{model_name}", map_location=torch.device('cpu')).to(device)
     model.eval()
 
     # Use the same transforms as validation
@@ -51,4 +59,3 @@ if __name__ == '__main__':
             break
 
     vc.release()
-    cv.destroyAllWindows()
