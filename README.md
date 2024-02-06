@@ -1,5 +1,11 @@
 # Lemur MQP 2nd Workshop
-This is the second workhop the Lemur MQP is running. By the end of the workshop you will be connecting to a Romi and running your model on the Romi.  
+This is the second workhop the Lemur MQP is running, it covers optimization techniques for running neural network models on embedded hardware
+
+Get started by opening the Google Collab and **make a copy** by going to File -> Save a copy to Drive
+
+
+
+By the end of the workshop you will be connecting to a Romi and running your model on the Romi.  
 Here are the Romis and their respective addresses:  
 **Lavasoa** -- autoreg-6602086.dyn.wpi.edu  
 **Goldenbamboo** -- autoreg-6602106.dyn.wpi.edu  
