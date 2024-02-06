@@ -4,6 +4,7 @@
 This is the second workhop the Lemur MQP is running, it covers optimization techniques for running neural network models on embedded hardware
 
 Get started by opening the Google Collab and **make a copy** by going to File -> Save a copy to Drive
+Link to collab: https://colab.research.google.com/drive/1TXJq4lnkVNPVfacynCPu2d8d5vd6RTHT#scrollTo=25c5mobqYZEm
 
 Run through the setup and introduction until you get to the Comparison to original section where you will transfer the model to your Romi.
 Ask one of us running to Workshop to hand you a room and then depending on which one you get follow the below instructions to SSH into one from your laptop.
