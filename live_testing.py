@@ -31,7 +31,7 @@ if __name__ == '__main__':
     torch.backends.quantized.engine = 'qnnpack'
 
     # Load model that we trained
-    model = torch.jit.load(f"~/{model_name}", map_location=torch.device('cpu')).to(device)
+    model = torch.jit.load(f"{model_name}", map_location=torch.device('cpu')).to(device)
     model.eval()
 
     # Use the same transforms as validation
